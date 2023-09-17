@@ -1,0 +1,170 @@
+
+/*about page*/
+.vision {background-image: url(../images/vision.jpg); background-attachment: fixed; background-size: cover; background-repeat: no-repeat;}
+.vision .bx {padding: 60px; border: 1px solid #ddd;}
+.vision .bx h4 {font-size: 30px; margin-bottom: 10px;}
+
+
+/*unit page*/
+.unit .item {position: relative; margin-top: 30px;}
+.unit .item img {width: 100%;}
+.unit .bg {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 50%;
+  z-index: 1;
+  background: rgb(20 20 20 / 80%);
+  top: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  opacity: 0;
+  transition: all 0.3s ease-in-out;
+  padding: 20px;
+  cursor: url(../images/cursor_view.png), move;
+}
+.unit .item:hover .bg {
+  opacity: 1;
+}
+.unit .item .lg {
+  position: absolute;
+  width: 35%;
+  left: 8%;
+  z-index: 9;
+}
+.unit .bg .bg-image-text {
+  display: block;
+  font-size: 20px;
+  color: #fff;
+  padding-bottom: 6px;
+}
+.unit .bg .sub-title {
+  text-decoration: underline; 
+  font-size: 14px;
+  color: #00aa66;
+}
+
+/*certifications*/
+.tz-gallery .bx {height: 65vh; cursor: pointer; background-size: cover; background-position: center; background-repeat: no-repeat; position: relative;  transition: all 500ms ease-in-out; border: 1px solid #ddd;}
+.tz-gallery .bx {position: relative; margin-top: 30px;}
+.tz-gallery .lightbox img {width: 100%; border-radius: 0; position: relative;}
+.tz-gallery .lightbox:before {position: absolute; top: 50%; left: 50%; margin-top: -13px; margin-left: -13px; opacity: 0; color: #fff; font-size: 24px; font-family: 'Glyphicons Halflings'; content: '\e003'; pointer-events: none; z-index: 9000; transition: 0.4s;}
+.tz-gallery .lightbox:after {position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0; background-color: rgb(0 170 102 / 72%); content: ''; transition: 0.4s;}
+.tz-gallery .lightbox:hover:after,
+.tz-gallery .lightbox:hover:before {opacity: 1;}
+.baguetteBox-button {background-color: transparent !important;}
+#baguetteBox-overlay .full-image {padding: 70px 0;}
+
+
+/*clients*/
+.clients .cl {border: 1px solid #e6e6e6; margin-top: 25px;}
+.clients .cl img {filter: none; -webkit-filter: grayscale(0); -webkit-transition: all .8s ease-in-out;}
+.clients .cl img:hover {filter: gray; -webkit-filter: grayscale(1);}
+
+
+/*contact*/
+.contact .bx {border: 1px solid #e2e4e7; padding: 40px 30px; height: 270px; border-radius: 25px;}
+.contact .bx i {color: #00ab6a; font-size: 45px; margin-bottom: 40px;}
+.contact .bx p, .contact .bx a {color: #627293!important; font-weight: 500!important;}
+
+
+/*locations*/
+.locations .box {margin-top: 40px; position: relative; width: 100%; overflow: hidden; border-radius: 15px; -webkit-transition: 0.5s; transition: 0.5s;}
+.locations .box:hover {-webkit-transform: translateY(-10px); transform: translateY(-10px);}
+.locations .text {-webkit-transition: 0.5s; transition: 0.5s; position: absolute; top: auto; bottom: 0; left: 0; width: 100%; z-index: 10; padding: 25px;}
+.locations .text p, .locations .text a {color: #fff!important; font-weight: 300!important; margin-bottom: 2px; text-decoration: none;}
+.locations .text a:hover {font-weight: 500!important;}
+.locations .overlay {display: block; position: absolute; height: 100%; width: 100%; bottom: 0; z-index: 3; background: rgb(0 0 0 / 80%); background: -webkit-linear-gradient(0deg, rgb(0 0 0 / 80%) 0%, rgba(89,59,116,0) 100%); background: linear-gradient( 0deg, rgb(0 0 0 / 80%) 0%, rgba(89,59,116,0) 100%);}
+
+
+/*get*/
+.get form label {font-size: 20px; font-weight: 600; color: #010101; margin-bottom: 10px;}
+.get form .form-control {display: block; width: 100%; padding: 10px 12px; color: #555; background-color: #f7f7f7; border: none; border-bottom: 3px solid #01ab66; border-radius: 0px; box-shadow: none; margin-bottom: 20px; font-size: 14px; height: calc(1.5em + 0.75rem + 15px); outline: none;}
+.get form textarea {height: calc(7.5em + 0.75rem + 15px)!important;}
+
+
+/*business*/
+.business ul li {font-size: 30px; list-style-type: square; color: #289925;}
+.business p {color: #474747; font-weight: 500; margin-bottom: 0;}
+.business .back {text-decoration: none; font-weight: 600;}
+.business .back i {font-size: 14px;}
+
+
+/*partners*/
+.bg {background-image: url(../images/vision.jpg); background-attachment: fixed; background-size: cover; background-repeat: no-repeat;}
+.partners .owl-theme .owl-controls {display: none!important;}
+.partners .item {border: 1px solid #e6e6e6; margin: 0px 5px;}
+
+
+
+
+
+@media only screen and (min-width : 1920px) and (max-width : 2560px){}
+
+@media only screen and (min-width : 1600px) and (max-width : 1919px){}
+
+@media only screen and (min-width : 1440px) and (max-width : 1599px){}
+
+@media only screen and (min-width : 1366px) and (max-width : 1439px){}
+
+@media only screen and (min-width : 1280px) and (max-width : 1365px){}
+
+@media only screen and (min-width : 1200px) and (max-width : 1279px){}
+
+@media only screen and (min-width : 1024px) and (max-width : 1199px){
+.vision .bx {padding: 40px;}
+
+.tz-gallery .bx {height: 60vh;}
+
+.contact .bx {padding: 30px 20px;}
+.contact .bx i {margin-bottom: 25px;}
+.locations .text {padding: 20px;}
+.locations .text h4 {font-size: 20px;}
+.locations .text p, .locations .text a {margin-bottom: 2px; font-size: 15px;}
+
+
+
+}
+
+@media only screen and (min-width : 768px) and (max-width :1023px){
+.vision .bx {padding: 40px; margin-top: 20px;} 
+
+.tz-gallery .bx {height: 40vh;}
+
+.locations .box {margin-top: 30px;} 
+.contact .bx {margin-bottom: 20px;}
+
+.get form label {font-size: 16px;}
+
+.business img {margin-top: 20px;}
+
+
+
+}
+
+@media only screen and (min-width : 150px) and (max-width : 767px){
+.vision .bx {padding: 30px; margin-top: 20px;} 
+.vision .bx h4 {font-size: 26px;}
+
+.tz-gallery .bx {height: 45vh;}
+
+.locations .box {margin-top: 30px;} 
+.contact .bx {margin-bottom: 20px;}
+
+.get form label {font-size: 18px;}
+
+.business img {margin-top: 20px;}
+.partners h3 {margin-bottom: 30px;}
+
+
+}
+
+@media only screen and (max-width : 375px){}
+
+@media only screen and (max-width : 360px){}
+
+@media only screen and (max-width : 320px){}
