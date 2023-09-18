@@ -70,7 +70,24 @@ export default function Header() {
                                                 <MenuItem text="Telecomms and Security" symbol={gasPNG} />
                                             </div>
                                             {/* Continue from line 79 */}
+                                            <ul className='open'>
+                                                <li><a href="oil-and-gas-department.php">Oil and Gas Department</a></li>
+                                                <li><a href="chemical-departments.php">Chemical Department</a></li>
+                                                <li><a href="mechanical-department.php">Mechanical Department</a></li>
+                                                <li><a href="construction-department.php">Construction Department</a></li>
+                                                <li><a href="oil-gas-division.php">Oil & Gas Division</a></li>
+                                                <li>
+                                                    <a href="telecom-and-security.php">
+                                                        Telecom and Security
+                                                    </a>
+                                                </li>
+                                            </ul>
                                         </li>
+                                        <li><a href="clients.php">Our Clients</a></li>
+                                        <li><a href="https://careers.zamil.com/" target="blank">Careers</a></li>
+                                        <li><a href="contact-us.php">Contact Us</a></li>
+                                        <li><a href="ar" className="btn arabic bg-light">AR</a></li>
+                                        <li><a href="get-in-touch.php" className="btn bg-primary">Get in Touch</a></li>
                                     </ul>
                                 </nav>
                             </div>
