@@ -1,9 +1,9 @@
-import '../styles/main.css'
+import NavBar from "../components/Navbar"
 
 export default function Home() {
     return (
         <>
-        <h1 className="text-3xl font-bold underline bg-red-500">HOME PAGE</h1>
+        <NavBar />
         </>
     )
 }
