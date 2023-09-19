@@ -3,3 +3,7 @@
 @tailwind utilities;
 
 /* Write custom CSS here if needed */
+
+body {
+    background-color: bisque;
+}
