@@ -5,5 +5,9 @@
 /* Write custom CSS here if needed */
 
 body {
-    background-color: bisque;
+    background-color: whitesmoke;
+}
+
+.navbarAllignment {
+    align-items: flex-start;
 }
