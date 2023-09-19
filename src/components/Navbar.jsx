@@ -1,33 +1,31 @@
 import logo from '../assets/png/logo.png'
 
 function NavBar() {
-
+    // will need a state to know when the hamburger has been clicked.
     return (
-
-
-        <header className="bg-slate-500 h-16 md:h-24 sticky container z-10 top-0 flex justify-self-center justify-between items-center">
-            <div className="w-36 md:w-56 top-0">
-                <a href='/home'>
-                    <img src={logo} alt='Zamil Trade & Services Logo' />
+        <nav className='bg-slate-800'>
+            <div className='inline-flex py-2'>
+                <a href='/'>
+                    <img src={logo} alt='zamilts logo' />
                 </a>
             </div>
-            <div className='text-emerald-300 text-lg bg-slate-900 py-2 mr-4'>
-                <button className='hidden text-3xl focus:outline-none'>
-                    &#9776;
-                </button>
-                <ul className='space-x-6 flex items-center flex-wrap'>
+            <div className='inline-flex text-white'>
+                <ul className='flex space-x-8 flex-row'>
                     <li>
-                        <a href="#partners" className='hover:opacity-90'>PLACEHOLDER</a>
+                        <a href='/'>PLACEHOLDER</a>
                     </li>
                     <li>
-                        <a href="#partners" className='hover:opacity-90'>PLACEHOLDER</a>
+                        <a href='/'>PLACEHOLDER</a>
                     </li>
                     <li>
-                        <a href="#partners" className='hover:opacity-90'>PLACEHOLDER</a>
+                        <a href='/'>PLACEHOLDER</a>
+                    </li>
+                    <li>
+                        <a href='/'>PLACEHOLDER</a>
                     </li>
                 </ul>
             </div>
-        </header>
+        </nav>
     )
 
 }
