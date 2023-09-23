@@ -7,7 +7,7 @@ function NavBar() {
   const ulStyles = 'flex space-x-4 text-center navbarAllignment text-white';
   const liStyles = "transition-all hover:text-green-400 p-1";
 
-  // will need a state to know when the hamburger has been clicked.
+  // will need a state to know when the hamburger has been clicked
   return (
     <header className="flex border-black bg-gradient-to-b from-green-700 transition-all overflow-hidden">
       <div
