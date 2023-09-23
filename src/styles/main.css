@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Write custom CSS here if needed */
+
+body {
+    background-color: gray;
+}
+
+.navbarAllignment {
+    align-items: flex-start;
+}
