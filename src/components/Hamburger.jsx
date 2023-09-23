@@ -4,7 +4,9 @@ function Hamburger(props) {
         <button
             id='mobile-open-btn'
             className={props.className}>
-            &#9776;
+            <i class="fa-solid fa-bars" />
+            {/*&#9776;*/}
+            {/*<img src={strawberry} />*/}
         </button>
     )
 }
