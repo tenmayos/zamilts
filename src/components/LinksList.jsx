@@ -1,4 +1,5 @@
 import { animated, useSpring } from '@react-spring/web'
+import { useState } from 'react';
 /**
  * @param {string} mainStyles ul's CSS classes
  * @param {string} liStyles li's CSS Classes
@@ -6,6 +7,20 @@ import { animated, useSpring } from '@react-spring/web'
  * @description returns an HTML ul filled with the website's pages
  */
 function LinksList(props) {
+  const [getInHovered, setGetInHover] = useState(false);
+  const [springs, api] = useSpring(() => {
+    return {
+      // text starts to show from right to left
+    }
+  })
+
+  function handleGetIn() {
+
+    setGetInHover(() => {
+      return !getInHovered
+    })
+
+  }
 
   return (
     <>
@@ -29,15 +44,26 @@ function LinksList(props) {
           <a href="/">العربية</a>
         </li>
         <li className='flex-auto bg-green700'>
-          <animated.a className='transition-all rounded-full text-sm hover:bg-black bg-green-700 p-2'
-          href='/'>
-            Get in Touch?
-            <i className="pr-1 pl-2 fa-solid fa-phone-volume"></i>
+          <animated.a
+            className='transition-all
+            shadowed
+             rounded-full hover:bg-green-600
+              bg-green-700 p-2'
+            onMouseEnter={handleGetIn}
+            onMouseLeave={handleGetIn}
+            style={springs}
+            href='/'>
+            {
+              getInHovered &&
+              <div className='inline-block pr-2 pl-1'>
+                Get in Touch
+              </div>
+            }
+            <i className="fa-solid fa-phone-volume"></i>
           </animated.a>
         </li>
       </ul>
       <div>
-
       </div>
     </>
   )
