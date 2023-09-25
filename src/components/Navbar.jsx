@@ -5,9 +5,9 @@ import logo from "../assets/png/logo.png";
 
 
 function NavBar() {
-  const ulStyles = 'flex space-x-4 text-center ul-allignment text-white';
-  const liStyles = "transition-all hover:text-green-400 p-1";
-  const btnLiStyles = 'transition-all p-1';
+  const ulStyles = 'inline-flex space-x-6 ul-allignment p-4 text-white';
+  const liStyles = "transition-all hover:text-green-400";
+  const btnLiStyles = 'transition-all bg-green-600 rounded-full hover:bg-black hover:text-green-600';
   // Remove fade effect. looks bad.
   const [styleSprings, api] = useSpring(() => {
     return {
@@ -25,7 +25,7 @@ function NavBar() {
     >
       <div
         id="logo"
-        className="w-44 p-4 ml-4 shrink-0 md:w-56 lg:w-64 lg:ml-2"
+        className="w-44 p-4 ml-4 shrink-0 md:w-56 lg:w-56 lg:ml-8"
       >
         <a href="/">
           <img src={logo} alt="zamil logo" />
@@ -35,8 +35,11 @@ function NavBar() {
         <Hamburger cName="mr-6 mt-3 text-3xl lg:hidden md:text-5xl p-1 text-white" />
       </div>
       <nav
-        className="m-auto mr-8 text-base hidden lg:flex bg-black p-4 rounded-2xl border border-green-700">
-        <LinksList mainStyles={ulStyles} liStyles={liStyles} btnLiStyles={btnLiStyles} />
+        className="ml-auto mr-12 mt-6 hidden lg:block">
+        <div className="bg-black bg-opacity-50 text-base hidden lg:flex rounded-2xl border border-green-700">
+          <LinksList mainStyles={ulStyles} liStyles={liStyles} btnLiStyles={btnLiStyles} />
+        </div>
+
       </nav>
     </animated.header>
   );
