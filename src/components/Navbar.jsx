@@ -12,7 +12,7 @@ function NavBar() {
   // will need a state to know when the hamburger has been clicked
   return (
     <animated.header
-      className="flex border-black bg-gradient-to-b from-green-700 transition-all overflow-hidden">
+      className="fixed top-0 z-10 w-full flex border-black bg-gradient-to-b from-green-700 transition-all overflow-hidden">
       <div
         id="logo"
         className="w-44 p-4 ml-4 shrink-0 md:w-56 lg:w-52 lg:mt-2 lg:ml-8"
