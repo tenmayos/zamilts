@@ -1,6 +1,5 @@
 import Hamburger from "./Hamburger.jsx";
 import LinksList from './LinksList.jsx';
-import { animated, useTransition } from '@react-spring/web';
 import logo from "../assets/png/logo.png";
 
 
@@ -11,7 +10,7 @@ function NavBar() {
 
   // will need a state to know when the hamburger has been clicked
   return (
-    <animated.header
+    <header
       className="fixed top-0 z-10 w-full flex border-black bg-gradient-to-b from-green-700 transition-all overflow-hidden">
       <div
         id="logo"
@@ -30,7 +29,7 @@ function NavBar() {
           <LinksList mainStyles={ulStyles} liStyles={liStyles} btnLiStyles={btnLiStyles} />
         </div>
       </nav>
-    </animated.header>
+    </header>
   );
 }
 
