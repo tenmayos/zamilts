@@ -2,6 +2,7 @@ import aboutPic from '../assets/png/about.png'
 import PrimaryButton from './PrimaryButton';
 
 function Intro() {
+
     return (
         <section className="md:grid md:grid-cols-2 text-left my-12 p-4">
             <div className='flex md:justify-center md:self-center'>
