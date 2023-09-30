@@ -19,3 +19,20 @@ body {
 .transform-center {
     transform: translate(-50%, -50%);
 }
+/* Look into this again later */
+.zoomed {
+    transform: scale(2.2);
+    transform-origin: 50% 50%;
+}
+
+.carousel-container {
+    display: inline-block;
+    margin: 20px;
+    border: 1px solid black;
+    overflow: hidden;
+    /* clip the excess when child gets bigger than parent */
+}
+
+.long {
+    height: 500px;
+}
