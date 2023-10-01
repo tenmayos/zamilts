@@ -12,13 +12,38 @@ function Services() {
     // 1- make it change automatically every set amount of time.
     // 2- work on the carousel change animation.
     // 3- see how u can zoom into the picture as the window shrinks.
-    
+
     const imagesUsed = [
-        pic1,
-        pic2,
-        pic3,
-        pic4,
-        pic5,
+        {
+            image: pic1,
+            alt: 'image of employees focused on working',
+            title: 'Around 250 employees serving 3000 customers',
+            desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna...'
+        },
+        {
+            image: pic2,
+            alt: 'image of 2 people shaking hands',
+            title: 'Professional business approach',
+            desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna...',
+        },
+        {
+            image: pic3,
+            alt: 'image of a truck and a plane and a car with a ship carrying large containers. i know, dont ask...',
+            title: 'Professional logistical support & services',
+            desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna...',
+        },
+        {
+            image: pic4,
+            alt: 'image of a person pressing a single key on a laptop.',
+            title: 'Prompt coordination & easier communication',
+            desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna...',
+        },
+        {
+            image: pic5,
+            alt: 'image of 2 guys wearing suits and shaking hands while the third person touches a shut down tablet',
+            title: 'Strategic partnership approach with clients & suppliers',
+            desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna...',
+        }
     ]
 
     function goToPrev() {
@@ -38,13 +63,12 @@ function Services() {
     }
 
     return (
-        <section>
+        <section className=''>
             <h1 className='text-left text-2xl mb-6 ml-4'>
                 <strong>
                     Value Added Services
                 </strong>
             </h1>
-
             <div className='relative'>
                 <div
                     className='z-20 
@@ -62,15 +86,26 @@ function Services() {
                     <i className='fa-solid fa-chevron-right text-4xl md:text-5xl lg:text-6xl'></i>
                 </div>
                 <div>
-                    <div className='absolute bg-opacity-50 bg-black z-10 w-7/12 h-full p-4'>
+                    <div className='absolute bg-opacity-50 bg-black z-10 w-3/4 md:w-1/2 lg:w-1/3 h-full p-4'>
                         <div className='flex'>
-                            <img className='ml-4 mt-2 mb-6 w-24' src={logo} alt="" />
+                            <img className='ml-4 mt-4 mb-6 w-36 md:ml-6 md:mt-6 md:w-40 ' src={logo} alt="Zamil Trade & Services Logo" />
                         </div>
-                        <h4 className='inline-flex text-2xl text-white mb-2'>Professional logistical support & services</h4>
-                        <p className='text-white text-base'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna...</p>
+                        <div className='pl-5'>
+                            <h4 className='inline-flex text-2xl text-white mb-4'>
+                                <strong>{
+                                    imagesUsed[currentIndex].title}
+                                </strong>
+                            </h4>
+                            <p className='text-white text-base lg:text-lg'>
+                                {imagesUsed[currentIndex].desc}
+                            </p>
+                        </div>
                     </div>
-                    {/* changed width to full */}
-                    <img className='w-full' src={imagesUsed[currentIndex]} alt="" />
+                    <div className='overflow-hidden flex flex-wrap'>
+                        {/* changed width to full */}
+                        <img className='long zoomed object-center' src={imagesUsed[currentIndex].image}
+                            alt={imagesUsed[currentIndex].alt} />
+                    </div>
                 </div>
             </div>
         </section>
