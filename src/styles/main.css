@@ -56,7 +56,7 @@ body {
 }
 @media (min-width: 768px) {
     .long {height: 600px;}
-    .zoomed {width: 100%;}
+    
 }
 @media (min-width: 1024px) {
     .long {height: 750px;}

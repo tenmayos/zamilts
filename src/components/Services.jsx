@@ -63,7 +63,7 @@ function Services() {
     }
 
     return (
-        <section className=''>
+        <section className='pb-5'>
             <h1 className='text-left text-2xl mb-6 ml-4'>
                 <strong>
                     Value Added Services
@@ -101,9 +101,9 @@ function Services() {
                             </p>
                         </div>
                     </div>
-                    <div className='overflow-hidden flex flex-wrap'>
+                    <div className='overflow-hidden'>
                         {/* changed width to full */}
-                        <img className='long zoomed object-center' src={imagesUsed[currentIndex].image}
+                        <img className='long zoomed lg:w-full object-none' src={imagesUsed[currentIndex].image}
                             alt={imagesUsed[currentIndex].alt} />
                     </div>
                 </div>
