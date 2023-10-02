@@ -1,6 +1,6 @@
 function OurClients() {
     return (
-        <section className="grid grid-cols-2 grid-rows-2 md:grid-rows-2 pb-20">
+        <section className="grid grid-cols-2 grid-rows-2 md:grid-rows-2 pb-10">
             <div className="text-center col-start-1 col-span-2">
                 <h1 className="text-3xl">
                     <strong>
