@@ -1,4 +1,5 @@
 import subLogo from '../assets/png/logo-dr.png'
+import MicroFooter from './MicroFooter';
 
 function Footer() {
     // will will implement hovering with CSS instead of JS.
@@ -112,13 +113,7 @@ function Footer() {
                     </ul>
                 </div>
             </footer>
-
-            <div className='text-center'>
-                <hr className='border border-gray-200 my-4 w-2/3 m-auto' />
-                <span className='text-sm text-center pb-4'>
-                    © 2022 Zamil Trade & Services All rights reserved
-                </span>
-            </div>
+            <MicroFooter />
         </>
     )
 }
