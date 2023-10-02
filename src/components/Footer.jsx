@@ -6,13 +6,16 @@ function Footer() {
     const anchorClasses = 'transition-colors hover:text-green-600';
     return (
         <>
-            <footer 
-            className="grid grid-rows-[max-content_1fr] px-4 text-left md:grid-rows-[max-content_1fr] md:grid-cols-3 md:px-12">
-                <div className="row-start-1 my-auto md:col-span-2 pb-4">
+            <footer
+                className="grid grid-rows-[max-content_1fr] md:grid-rows-[max-content_1fr] lg:grid-cols-4 lg:grid-rows-none
+             px-4 text-left md:grid-cols-3 md:px-12 lg:w-10/12 lg:mx-auto">
+                <div className="row-start-1 my-auto md:col-span-2 lg:col-start-1 lg:row-start-2 lg:row-end-2 pb-4 lg:my-0 lg:mx-auto lg:col-span-1">
                     <a href="/">
-                        <img className='ml-2 mb-2 w-44 md:w-52' src={subLogo} alt="Darker Zamil Trade & Services Logo" />
+                        <img className='ml-2 mb-2 w-44 md:w-52 lg:w-60' src={subLogo} alt="Darker Zamil Trade & Services Logo" />
                     </a>
-                    <p className='pt-4 pl-2 pr-16'>Their symmetry and bright colors boost the aesthetics of places you occupy...</p>
+                    <p className='pt-4 pl-2 pr-16 lg:px-2'>Their symmetry and
+                        bright colors
+                        boost the aesthetics of places you occupy...</p>
                     <div className='pl-2 pt-2'>
                         <div>
                             <ul className='text-xl flex space-x-7 text-gray-600'>
@@ -40,7 +43,7 @@ function Footer() {
                         </div>
                     </div>
                 </div>
-                <div id='zts' className='row-start-2 px-2 md:col-start-1 pb-4'>
+                <div id='zts' className='row-start-2 lg:col-start-2 px-2 md:col-start-1 pb-4'>
                     <ul className='space-y-3'>
                         <h1 className='text-green-600 mb-2'>
                             <strong>
@@ -67,7 +70,7 @@ function Footer() {
                         </li>
                     </ul>
                 </div>
-                <div id='regions' className='row-start-3 px-2 mt-2 md:col-start-2 md:row-start-2 pb-4 md:mt-0'>
+                <div id='regions' className='row-start-3 px-2 mt-2 md:col-start-2 md:row-start-2 lg:col-start-3 pb-4 md:mt-0'>
                     <ul className='space-y-3'>
                         <h1 className='text-green-600 mb-2'>
                             <strong>
@@ -94,7 +97,7 @@ function Footer() {
                         </li>
                     </ul>
                 </div>
-                <div id='offerings' className='row-start-4 px-2 mt-2 md:row-start-2 md:col-start-3 md:mt-0'>
+                <div id='offerings' className='row-start-4 px-2 mt-2 md:row-start-2 md:col-start-3 md:mt-0 lg:col-start-4'>
                     <ul className='space-y-3'>
                         <h1 className='text-green-600 mb-2'>
                             <strong>
