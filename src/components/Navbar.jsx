@@ -11,7 +11,7 @@ function NavBar() {
   // will need a state to know when the hamburger has been clicked
   return (
     <header
-      className="fixed top-0 z-10 w-full flex border-black bg-gradient-to-b from-green-700 transition-all overflow-hidden">
+      className="fixed top-0 z-20 w-full flex border-black bg-gradient-to-b from-green-700 transition-all">
       <div
         id="logo"
         className="w-44 p-4 ml-4 shrink-0 md:w-56 lg:w-52 lg:mt-2 lg:ml-8"
@@ -29,6 +29,28 @@ function NavBar() {
           <LinksList mainStyles={ulStyles} liStyles={liStyles} btnLiStyles={btnLiStyles} />
         </div>
       </nav>
+      <div className="absolute top-full left-6 right-6 bg-white">
+        <ul className="w-full">
+          <li className="flex border-b border-green-600 p-3">
+            <a href="/">
+              Home
+            </a>
+          </li>
+          <li className="flex border-b border-green-600">
+            <a className="inline-flex p-3" href="">About us</a>
+            <div className="inline-flex border-l border-gray-600 ml-auto p-3 cursor-pointer">
+              {/* use a trenary operator or state to change from + to - */} +
+            </div>
+          </li>
+          {/* Insert list item hidden UL for about us here */}
+          <li>PLACEHOLDER</li>
+          <li>PLACEHOLDER</li>
+          <li>PLACEHOLDER</li>
+          <li>PLACEHOLDER</li>
+          <li>PLACEHOLDER</li>
+          <li>PLACEHOLDER</li>
+        </ul>
+      </div>
     </header>
   );
 }
