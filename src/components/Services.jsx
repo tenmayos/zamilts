@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import logo from '../assets/png/logo.png';
 import pic1 from '../assets/jpg/home_ser_1.jpg';
 import pic2 from '../assets/jpg/home_ser_2.jpg';
@@ -12,6 +12,7 @@ function Services() {
     // 1- make it change automatically every set amount of time.
     // 2- work on the carousel change animation.
     // 3- see how u can zoom into the picture as the window shrinks.
+
 
     const imagesUsed = [
         {
@@ -46,6 +47,15 @@ function Services() {
         }
     ]
 
+    useEffect(() => {
+        console.log('used Effect')
+        const carouselChanger = setInterval(goToNext, 5000)
+        return () => {
+            console.log('destroyed effect')
+            clearInterval(carouselChanger)
+        }
+    });
+
     function goToPrev() {
         if (currentIndex === 0) {
             setCurrentIndex(imagesUsed.length - 1);
@@ -76,7 +86,6 @@ function Services() {
                      text-white cursor-pointer
                      hover:text-green-500'
                     onClick={goToPrev}>
-
                     <i className="fa-solid fa-chevron-left text-4xl md:text-5xl lg:text-6xl"></i>
                 </div>
                 <div
