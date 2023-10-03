@@ -11,14 +11,14 @@ function Hero() {
         },
     });
 
-    const bgSprings = useSpring({
+    /*const bgSprings = useSpring({
         from: { transform: 'scale(1.0)' },
         to: { transform: 'scale(1.1)' },
         config: {
             duration: 6000,
         },
         loop: { reverse: true }
-    });
+    });*/
 
     return (
         <>
@@ -43,7 +43,7 @@ function Hero() {
                     style={
                         {
                             'backgroundImage': `url(${banner_1})`,
-                            ...bgSprings
+                            
                         }}
                 />
             </section>

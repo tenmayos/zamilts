@@ -47,12 +47,10 @@ function Services() {
         }
     ]
 
-    useEffect(() => {
+    /*useEffect(() => {
         const carouselChanger = setInterval(goToNext, 5000)
-        return () => {
-            clearInterval(carouselChanger)
-        }
-    });
+        return () => clearInterval(carouselChanger)
+    }, []);*/
 
     function goToPrev() {
         if (currentIndex === 0) {

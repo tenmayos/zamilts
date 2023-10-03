@@ -27,7 +27,7 @@ function Hamburger(props) {
     }
     return (
         <a.button
-            onClick={() => { props.clicked(); handleClick(); }}
+            onClick={handleClick}
             className={props.cName}
             style={springs}>
             <i className="fa-solid fa-bars" />
