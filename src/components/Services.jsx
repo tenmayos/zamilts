@@ -48,10 +48,8 @@ function Services() {
     ]
 
     useEffect(() => {
-        console.log('used Effect')
         const carouselChanger = setInterval(goToNext, 5000)
         return () => {
-            console.log('destroyed effect')
             clearInterval(carouselChanger)
         }
     });
