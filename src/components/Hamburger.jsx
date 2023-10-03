@@ -3,15 +3,15 @@ import { useState } from "react";
 
 function Hamburger(props) {
     const [isPressed, setPressed] = useState(false);
-    const [springs, api] = useSpring(() => {})
+    const [springs, api] = useSpring(() => { })
 
     function handleClick() {
 
         if (isPressed == true) {
             api.start(
                 {
-                    from: {opacity: 0.5},
-                    to: {opacity: 1}
+                    from: { opacity: 0.5 },
+                    to: { opacity: 1 }
                 }
             )
         } else {
@@ -27,10 +27,9 @@ function Hamburger(props) {
     }
     return (
         <a.button
-            onClick={handleClick}
+            onClick={() => { props.clicked(); handleClick(); }}
             className={props.cName}
-            style={springs}
-        >
+            style={springs}>
             <i className="fa-solid fa-bars" />
         </a.button>
     )
