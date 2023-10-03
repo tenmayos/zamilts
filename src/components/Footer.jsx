@@ -13,9 +13,11 @@ function Footer() {
                     <a href="/">
                         <img className='ml-2 mb-2 w-44 md:w-52 lg:w-60' src={subLogo} alt="Darker Zamil Trade & Services Logo" />
                     </a>
-                    <p className='pt-4 pl-2 pr-16 lg:px-2'>Their symmetry and
+                    <p className='pt-4 pl-2 pr-16 lg:px-2'>
+                        Their symmetry and
                         bright colors
-                        boost the aesthetics of places you occupy...</p>
+                        boost the aesthetics of places you occupy...
+                        </p>
                     <div className='pl-2 pt-2'>
                         <div>
                             <ul className='text-xl flex space-x-7 text-gray-600'>
