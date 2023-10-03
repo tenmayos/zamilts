@@ -9,12 +9,21 @@ function Hero() {
         config: {
             duration: 700,
         },
-    })
+    });
+
+    const bgSprings = useSpring({
+        from: { transform: 'scale(1.0)' },
+        to: { transform: 'scale(1.1)' },
+        config: {
+            duration: 6000,
+        },
+        loop: { reverse: true }
+    });
 
     return (
         <>
-            <section id='hero' className='relative text-center'>
-                <animated.div className='absolute text-white top-2/4 left-2/4 transform-center lh'
+            <section id='hero' className='relative text-center overflow-hidden'>
+                <animated.div className='absolute text-white top-2/4 left-2/4 transform-center z-10'
                     style={titleSprings}>
                     <h1 className='text-2xl leading-normal md:text-4xl md:leading-tight'>Welcome to <strong className='text-green-500'>
                         Zamil
@@ -30,7 +39,13 @@ function Hero() {
                         The enterprising, foresighted and innovative spirit which...
                     </p>
                 </animated.div>
-                <img className='w-screen h-screen' src={banner_1} alt="Picture of a futuristic costruction site" />
+                <animated.div className='w-screen h-screen bg-no-repeat bg-center'
+                    style={
+                        {
+                            'backgroundImage': `url(${banner_1})`,
+                            ...bgSprings
+                        }}
+                />
             </section>
         </>
     )
