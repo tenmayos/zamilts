@@ -1,6 +1,6 @@
 function AboutUsSubmenu() {
     return (
-        <ul className="p-2 bg-green-700 text-white">
+        <ul className="p-2 text-white">
             <li className="p-3 border-b border-green-600">
                 Company Profile
             </li>
