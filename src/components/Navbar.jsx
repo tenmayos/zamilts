@@ -3,11 +3,16 @@ import LinksList from './LinksList.jsx';
 import logo from "../assets/png/logo.png";
 import { useState } from "react";
 import AboutUsSubmenu from "./micro components/AboutUsSubmenu.jsx";
+import BusinessDivisSubmenu from './micro components/BusinessDivisSubmenu.jsx';
 
 function NavBar() {
   const ulStyles = 'inline-flex space-x-6 ul-allignment p-4 text-white';
   const liStyles = "transition-all hover:text-green-400";
   const btnLiStyles = 'transition-all bg-green-600 rounded-full hover:bg-black hover:text-green-600';
+
+  function pathFinder(path) {
+    console.log('going to ' + path)
+  }
 
   const [isAboutClicked, setAboutClicked] = useState(false);
   const [isBDivisClicked, setBDivisClicked] = useState(false);
@@ -50,14 +55,12 @@ function NavBar() {
       </header>
       {/* mobile Navmenu start */}
       <div className="relative rounded-sm lg:hidden">
-        <ul className="bg-white">
-          <li className="border-b border-green-600 p-3 text-lg">
-            <a className="hover:text-green-600" href="/">
-              Home
-            </a>
+        <ul className="bg-white text-lg">
+          <li className="border-b border-green-600 p-3 cursor-pointer hover:text-green-600 transition-colors">
+            Home
           </li>
           {/* About us submenu end */}
-          <li className="flex border-b border-green-600 p-3 text-lg cursor-pointer hover:text-green-600 transition-colors"
+          <li className="flex border-b border-green-600 p-3 cursor-pointer hover:text-green-600 transition-colors"
             style={isAboutClicked ? { backgroundColor: 'rgb(16 185 129)', color: 'white' } : null}
             onClick={handleAboutClick}>
             <div className="mr-auto">
@@ -70,8 +73,9 @@ function NavBar() {
           <li className="bg-slate-600">
             {isAboutClicked && <AboutUsSubmenu />}
           </li>
-          {/* About us submenu end */}
-          <li className="flex border-b border-green-600 p-3 text-lg cursor-pointer hover:text-green-600 transition-colors"
+
+          {/* Business divisions submenu start */}
+          <li className="flex border-b border-green-600 p-3 cursor-pointer hover:text-green-600 transition-colors"
             style={isBDivisClicked ? { backgroundColor: 'rgb(16 185 129)', color: 'white' } : null}
             onClick={handleBusinessDivClicked}>
             <div className="mr-auto">
@@ -82,11 +86,23 @@ function NavBar() {
             </div>
           </li>
           <li className="bg-slate-600">
+            {isBDivisClicked && <BusinessDivisSubmenu />}
           </li>
-          <li>PLACEHOLDER</li>
-          <li>PLACEHOLDER</li>
-          <li>PLACEHOLDER</li>
-          <li>PLACEHOLDER</li>
+          {/* Business divisions submenu start */}
+
+          <li className="border-b border-green-600 p-3 cursor-pointer hover:text-green-600 transition-colors">
+            <a href="/">Our Clients</a>
+          </li>
+          <li className="border-b border-green-600 p-3 cursor-pointer hover:text-green-600 transition-colors">
+            <a href="/">Careers</a>
+          </li>
+          <li className="border-b border-green-600 p-3 cursor-pointer hover:text-green-600 transition-colors">
+            العربية
+          </li>
+          <li className="p-3 text-white bg-green-500 hover:bg-green-600 transition-colors cursor-pointer"
+            onClick={() => pathFinder('/getin')}>
+            Get in Touch
+          </li>
         </ul>
       </div>
     </div>
