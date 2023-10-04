@@ -7,6 +7,8 @@ function MobileNavMenu() {
     const [isAboutClicked, setAboutClicked] = useState(false);
     const [isBDivisClicked, setBDivisClicked] = useState(false);
 
+    {/* Figure out what animation u want to add before starting */}
+    
     function pathFinder(path) {
         console.log('going to ' + path)
     }
