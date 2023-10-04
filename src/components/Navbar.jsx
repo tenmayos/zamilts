@@ -1,12 +1,21 @@
 import Hamburger from "./Hamburger.jsx";
 import LinksList from './LinksList.jsx';
 import logo from "../assets/png/logo.png";
-
+import { useState } from "react";
+import AboutUsSubmenu from "./micro components/AboutUsSubmenu.jsx";
 
 function NavBar() {
   const ulStyles = 'inline-flex space-x-6 ul-allignment p-4 text-white';
   const liStyles = "transition-all hover:text-green-400";
   const btnLiStyles = 'transition-all bg-green-600 rounded-full hover:bg-black hover:text-green-600';
+  const [isAboutClicked, setAboutClicked] = useState(false);
+
+  function handleAboutClick() {
+    setAboutClicked(prevState => {
+      const currentState = prevState ? false : true
+      return currentState;
+    })
+  }
 
   // will need a state to know when the hamburger has been clicked
   return (
@@ -29,20 +38,27 @@ function NavBar() {
           <LinksList mainStyles={ulStyles} liStyles={liStyles} btnLiStyles={btnLiStyles} />
         </div>
       </nav>
-      <div className="absolute top-full left-6 right-6 bg-white">
-        <ul className="w-full">
-          <li className="flex border-b border-green-600 p-3">
-            <a href="/">
+      <div className="absolute top-full left-6 right-6 rounded-sm">
+        <ul className="w-full bg-white">
+          <li className="border-b border-green-600 p-3 text-lg">
+            <a className="hover:text-green-600" href="/">
               Home
             </a>
           </li>
-          <li className="flex border-b border-green-600">
-            <a className="inline-flex p-3" href="">About us</a>
-            <div className="inline-flex border-l border-gray-600 ml-auto p-3 cursor-pointer">
-              {/* use a trenary operator or state to change from + to - */} +
+          <li className="flex border-b border-green-600 p-3 text-lg cursor-pointer hover:text-green-600 transition-colors"
+            onClick={handleAboutClick}>
+            <div className="mr-auto">
+              <h2>About us</h2>
+            </div>
+            <div className="text-green-600">
+              <strong>{isAboutClicked ? '-' : '+'}</strong>
             </div>
           </li>
+
           {/* Insert list item hidden UL for about us here */}
+          <li>
+            {isAboutClicked && <AboutUsSubmenu />}
+          </li>
           <li>PLACEHOLDER</li>
           <li>PLACEHOLDER</li>
           <li>PLACEHOLDER</li>
