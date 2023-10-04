@@ -1,36 +1,38 @@
-import Hamburger from "./Hamburger.jsx";
 import LinksList from './LinksList.jsx';
 import logo from "../assets/png/logo.png";
 import { useState } from "react";
-import AboutUsSubmenu from "./micro components/AboutUsSubmenu.jsx";
-import BusinessDivisSubmenu from './micro components/BusinessDivisSubmenu.jsx';
+import { animated, useSpring } from '@react-spring/web';
+import MobileNavMenu from './micro components/MobileNavMenu.jsx';
 
 function NavBar() {
   const ulStyles = 'inline-flex space-x-6 ul-allignment p-4 text-white';
   const liStyles = "transition-all hover:text-green-400";
   const btnLiStyles = 'transition-all bg-green-600 rounded-full hover:bg-black hover:text-green-600';
+  const [burgerSprings, api] = useSpring(() => { })
 
-  function pathFinder(path) {
-    console.log('going to ' + path)
-  }
+  const [isMenuPressed, setMenuPressed] = useState(false);
 
-  const [isAboutClicked, setAboutClicked] = useState(false);
-  const [isBDivisClicked, setBDivisClicked] = useState(false);
+  function handleBurgerClick() {
 
-  function handleAboutClick() {
-    setAboutClicked(prevState => {
-      const currentState = prevState ? false : true
-      return currentState;
+    if (isMenuPressed == true) {
+      api.start(
+        {
+          from: { opacity: 0.5 },
+          to: { opacity: 1 }
+        }
+      )
+    } else {
+      api.start({
+        from: { opacity: 1 },
+        to: { opacity: 0.5 }
+      });
+    }
+
+    setMenuPressed((prevState) => {
+      return !prevState
     })
   }
 
-  function handleBusinessDivClicked() {
-    setBDivisClicked(prevState => {
-      return prevState ? false : true
-    })
-  }
-
-  // will need a state to know when the hamburger has been clicked
   return (
     <div className="fixed top-0 z-20 w-full">
       <header
@@ -44,7 +46,12 @@ function NavBar() {
           </a>
         </div>
         <div className="ml-auto inline-block content-center">
-          <Hamburger cName="mr-6 mt-3 text-3xl lg:hidden md:text-5xl p-1 text-white" />
+          <animated.button
+            onClick={handleBurgerClick}
+            className='mr-6 mt-3 text-3xl lg:hidden md:text-5xl p-1 text-white'
+            style={burgerSprings}>
+            <i className="fa-solid fa-bars" />
+          </animated.button>
         </div>
         <nav
           className="ml-auto mr-12 mt-6 hidden lg:block">
@@ -55,55 +62,7 @@ function NavBar() {
       </header>
       {/* mobile Navmenu start */}
       <div className="relative rounded-sm lg:hidden">
-        <ul className="bg-white text-lg">
-          <li className="border-b border-green-600 p-3 cursor-pointer hover:text-green-600 transition-colors">
-            Home
-          </li>
-          {/* About us submenu end */}
-          <li className="flex border-b border-green-600 p-3 cursor-pointer hover:text-green-600 transition-colors"
-            style={isAboutClicked ? { backgroundColor: 'rgb(16 185 129)', color: 'white' } : null}
-            onClick={handleAboutClick}>
-            <div className="mr-auto">
-              <h2>About us</h2>
-            </div>
-            <div className="text-green-600" style={isAboutClicked ? { color: 'white' } : null}>
-              <strong>{isAboutClicked ? '-' : '+'}</strong>
-            </div>
-          </li>
-          <li className="bg-slate-600">
-            {isAboutClicked && <AboutUsSubmenu />}
-          </li>
-
-          {/* Business divisions submenu start */}
-          <li className="flex border-b border-green-600 p-3 cursor-pointer hover:text-green-600 transition-colors"
-            style={isBDivisClicked ? { backgroundColor: 'rgb(16 185 129)', color: 'white' } : null}
-            onClick={handleBusinessDivClicked}>
-            <div className="mr-auto">
-              <h2>Business Divisions</h2>
-            </div>
-            <div className="text-green-600" style={isBDivisClicked ? { color: 'white' } : null}>
-              <strong>{isBDivisClicked ? '-' : '+'}</strong>
-            </div>
-          </li>
-          <li className="bg-slate-600">
-            {isBDivisClicked && <BusinessDivisSubmenu />}
-          </li>
-          {/* Business divisions submenu start */}
-
-          <li className="border-b border-green-600 p-3 cursor-pointer hover:text-green-600 transition-colors">
-            <a href="/">Our Clients</a>
-          </li>
-          <li className="border-b border-green-600 p-3 cursor-pointer hover:text-green-600 transition-colors">
-            <a href="/">Careers</a>
-          </li>
-          <li className="border-b border-green-600 p-3 cursor-pointer hover:text-green-600 transition-colors">
-            العربية
-          </li>
-          <li className="p-3 text-white bg-green-500 hover:bg-green-600 transition-colors cursor-pointer"
-            onClick={() => pathFinder('/getin')}>
-            Get in Touch
-          </li>
-        </ul>
+        {isMenuPressed && <MobileNavMenu />}
       </div>
     </div>
   );
