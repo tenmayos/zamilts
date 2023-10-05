@@ -1,6 +1,13 @@
+import { animated, useSpring } from "@react-spring/web";
+
 function BusinessDivisSubmenu() {
+    const spring = useSpring({
+        from: { x: '50%' },
+        to: { x: '0%' }
+    })
+
     return (
-        <ul className="p-2 text-white">
+        <animated.ul style={spring} className="p-2 text-white">
             <li className="p-3 border-b border-green-600">
                 Oil and Gas
             </li>
@@ -19,7 +26,7 @@ function BusinessDivisSubmenu() {
             <li className="p-3 border-green-600">
                 Telecoms and Security
             </li>
-        </ul>
+        </animated.ul>
     )
 }
 export default BusinessDivisSubmenu;
