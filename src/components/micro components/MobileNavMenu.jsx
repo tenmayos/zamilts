@@ -1,14 +1,15 @@
 import AboutUsSubmenu from "./AboutUsSubmenu";
 import BusinessDivisSubmenu from "./BusinessDivisSubmenu";
 import { useState } from 'react';
+import { animated } from "@react-spring/web";
 
-function MobileNavMenu() {
+function MobileNavMenu(props) {
 
     const [isAboutClicked, setAboutClicked] = useState(false);
     const [isBDivisClicked, setBDivisClicked] = useState(false);
 
-    {/* Figure out what animation u want to add before starting */}
-    
+    {/* Figure out what animation u want to add before starting */ }
+
     function pathFinder(path) {
         console.log('going to ' + path)
     }
@@ -26,7 +27,7 @@ function MobileNavMenu() {
     }
 
     return (
-        <ul className="text-lg bg-white">
+        <animated.ul style={props.usedSprings} className="text-lg bg-white">
             <li className="border-b border-green-600 p-3 cursor-pointer hover:text-green-600 transition-colors">
                 Home
             </li>
@@ -74,7 +75,7 @@ function MobileNavMenu() {
                 onClick={() => pathFinder('/getin')}>
                 Get in Touch
             </li>
-        </ul>
+        </animated.ul>
     )
 }
 

@@ -1,7 +1,7 @@
 import LinksList from './LinksList.jsx';
 import logo from "../assets/png/logo.png";
 import { useState } from "react";
-import { animated, useSpring } from '@react-spring/web';
+import { animated, useSpring, useTransition } from '@react-spring/web';
 import MobileNavMenu from './micro components/MobileNavMenu.jsx';
 
 function NavBar() {
@@ -11,6 +11,12 @@ function NavBar() {
   const [burgerSprings, api] = useSpring(() => { })
 
   const [isMenuPressed, setMenuPressed] = useState(false);
+  const transition = useTransition(isMenuPressed,
+    {
+      from: { x: '100%' },
+      enter: { x: '0%' },
+      leave: { x: '100%' }
+    })
 
   function handleBurgerClick() {
 
@@ -62,7 +68,12 @@ function NavBar() {
       </header>
       {/* mobile Navmenu start */}
       <div className="relative rounded-sm lg:hidden">
-        {isMenuPressed && <MobileNavMenu />}
+        {
+          transition(
+            (style, isMenuPressed) =>
+              isMenuPressed ? <MobileNavMenu usedSprings={style} /> : null
+          )
+        }
       </div>
     </div>
   );
