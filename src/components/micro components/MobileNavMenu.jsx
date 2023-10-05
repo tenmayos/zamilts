@@ -1,7 +1,7 @@
 import AboutUsSubmenu from "./AboutUsSubmenu";
 import BusinessDivisSubmenu from "./BusinessDivisSubmenu";
 import { useState } from 'react';
-import { animated } from "@react-spring/web";
+import { animated, useTransition } from "@react-spring/web";
 
 function MobileNavMenu(props) {
 
@@ -13,6 +13,18 @@ function MobileNavMenu(props) {
     function pathFinder(path) {
         console.log('going to ' + path)
     }
+
+    const transition = useTransition(isBDivisClicked, {
+        from: { x: '50%', opacity: 0.5 },
+        enter: { x: '0%', opacity: 1 },
+        leave: { x: '100%', opacity: 0 }
+    })
+
+    const aboutTransition = useTransition(isAboutClicked, {
+        from: { x: '50%', opacity: 0.5 },
+        enter: { x: '0%', opacity: 1 },
+        leave: { x: '100%', opacity: 0 }
+    })
 
     function handleAboutClick() {
         setAboutClicked(prevState => {
@@ -43,7 +55,11 @@ function MobileNavMenu(props) {
                 </div>
             </li>
             <li className="bg-slate-600">
-                {isAboutClicked && <AboutUsSubmenu />}
+                {
+                    aboutTransition(
+                        (styles, TisAboutClicked) => TisAboutClicked ? <AboutUsSubmenu springStyles={styles} /> : null
+                    )
+                }
             </li>
 
             {/* Business divisions submenu start */}
@@ -58,7 +74,11 @@ function MobileNavMenu(props) {
                 </div>
             </li>
             <li className="bg-slate-600">
-                {isBDivisClicked && <BusinessDivisSubmenu />}
+                {
+                    transition(
+                        (styles, TisBDivisClicked) => TisBDivisClicked && <BusinessDivisSubmenu springStyles={styles} />
+                    )
+                }
             </li>
             {/* Business divisions submenu start */}
 

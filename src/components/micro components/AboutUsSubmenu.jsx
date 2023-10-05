@@ -1,14 +1,9 @@
-import { animated, useSpring } from '@react-spring/web';
+import { animated} from '@react-spring/web';
 
-function AboutUsSubmenu() {
-
-    const spring = useSpring({
-        from: { x: '50%' },
-        to: { x: '0%' }
-    })
+function AboutUsSubmenu(props) {
 
     return (
-        <animated.ul style={spring} className="p-2 text-white">
+        <animated.ul style={props.springStyles} className="p-2 text-white">
             <li className="p-3 border-b border-green-600">
                 Company Profile
             </li>
