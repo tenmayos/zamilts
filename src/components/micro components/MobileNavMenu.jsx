@@ -7,6 +7,13 @@ function MobileNavMenu(props) {
 
     const [isAboutClicked, setAboutClicked] = useState(false);
     const [isBDivisClicked, setBDivisClicked] = useState(false);
+    const [transitionObj, setTransitionObj] = useState(
+        {
+            from: { x: '50%', opacity: 0.5 },
+            enter: { x: '0%', opacity: 1 },
+            leave: { x: '100%', opacity: 0 }
+        }
+    )
 
     {/* Figure out what animation u want to add before starting */ }
 
@@ -14,17 +21,9 @@ function MobileNavMenu(props) {
         console.log('going to ' + path)
     }
 
-    const transition = useTransition(isBDivisClicked, {
-        from: { x: '50%', opacity: 0.5 },
-        enter: { x: '0%', opacity: 1 },
-        leave: { x: '100%', opacity: 0 }
-    })
+    const transition = useTransition(isBDivisClicked, transitionObj)
 
-    const aboutTransition = useTransition(isAboutClicked, {
-        from: { x: '50%', opacity: 0.5 },
-        enter: { x: '0%', opacity: 1 },
-        leave: { x: '100%', opacity: 0 }
-    })
+    const aboutTransition = useTransition(isAboutClicked, transitionObj)
 
     function handleAboutClick() {
         setAboutClicked(prevState => {
