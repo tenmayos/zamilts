@@ -2,6 +2,7 @@ import { animated, useSpring } from '@react-spring/web';
 import { useState } from 'react';
 import { useTransition } from '@react-spring/web';
 import AboutUsSubmenu from './micro components/AboutUsSubmenu';
+import BusinessDivisSubmenu from './micro components/BusinessDivisSubmenu';
 /**
  * @param {string} mainStyles ul's CSS classes
  * @param {string} liStyles li's CSS Classes
@@ -12,7 +13,14 @@ function LinksList(props) {
   const [submenuIsOpen, setSubmenuIsOpen] = useState(false);
   const [getInHovered, setGetInHover] = useState(false);
   const [aboutUsHovered, setAboutUsHovered] = useState(false);
-  const submenuTransition = useTransition(aboutUsHovered, {
+  const [bdivisHovered, setBdivisHovered] = useState(false);
+
+  const aboutSubmenuTransition = useTransition(aboutUsHovered, {
+    from: { opacity: 0 },
+    enter: { opacity: 1 },
+    leave: { opacity: 0 },
+  });
+  const bDivisSubmenuTransition = useTransition(bdivisHovered, {
     from: { opacity: 0 },
     enter: { opacity: 1 },
     leave: { opacity: 0 },
@@ -22,11 +30,6 @@ function LinksList(props) {
       // text starts to show from right to left
     }
   })
-
-  function handleAboutUsHover() {
-    setAboutUsHovered(prevState => !prevState);
-    setSubmenuIsOpen(prevState => !prevState);
-  }
   function handleGetIn() {
 
     setGetInHover(() => {
@@ -42,21 +45,40 @@ function LinksList(props) {
           <a href="/">Home</a>
         </li>
         <li className={props.liStyles}
-          onMouseEnter={handleAboutUsHover}>
+          onMouseEnter={() => {
+            setAboutUsHovered(true);
+          }}>
           <a href="/">About Us</a>
         </li>
         {
-          submenuTransition(
+          aboutSubmenuTransition(
             (style, state) =>
               state
               &&
               <AboutUsSubmenu
                 springs={style} type='pc'
-                exitFunc={handleAboutUsHover} />
+                exitFunc={() => {
+                  setAboutUsHovered(false)
+                }} />
           )}
-        <li className={props.liStyles}>
+        <li className={props.liStyles}
+          onMouseEnter={() => {
+            setBdivisHovered(true);
+          }}>
           <a href="/">Business Divisions</a>
         </li>
+        {
+          bDivisSubmenuTransition(
+            (style, state) =>
+              state &&
+              <BusinessDivisSubmenu
+                springStyles={style} type='pc'
+                exitFunc={() => {
+                  setBdivisHovered(false)
+                }}
+              />
+          )
+        }
         <li className={props.liStyles}>
           <a href="/">Our Clients</a>
         </li>
