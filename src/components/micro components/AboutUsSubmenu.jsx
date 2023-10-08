@@ -15,13 +15,13 @@ function AboutUsSubmenu(props) {
                 <ul className='flex text-black p-4 space-x-8'>
                     <li className='text-center p-2'>
                         <div className='relative text-center'>
-                            <img className='w-14 mx-auto' src={companyIcon} alt="" />
+                            <img className='w-12 mx-auto' src={companyIcon} alt="" />
                             <span className='block'>Company Profile</span>
                         </div>
                     </li>
                     <li className='text-center p-2'>
                         <div className='relative text-center'>
-                            <img className='w-14 mx-auto' src={visionIcon} alt="" />
+                            <img className='w-12 mx-auto' src={visionIcon} alt="" />
                             <span className='block'>Vision and Mission</span>
                         </div>
                     </li>
