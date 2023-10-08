@@ -1,5 +1,7 @@
-import { animated, useSpring } from '@react-spring/web'
+import { animated, useSpring } from '@react-spring/web';
 import { useState } from 'react';
+import visionIcon from '../assets/png/vision.png';
+import companyIcon from '../assets/png/company.png';
 /**
  * @param {string} mainStyles ul's CSS classes
  * @param {string} liStyles li's CSS Classes
@@ -30,6 +32,22 @@ function LinksList(props) {
         </li>
         <li className={props.liStyles}>
           <a href="/">About Us</a>
+        </li>
+        <li className='absolute top-full bg-white rounded-md'>
+        <ul className='flex text-black p-4 space-x-8'>
+                <li className='text-center p-2'>
+                    <div className='relative text-center'>
+                        <img className='w-16 mx-auto' src={companyIcon} alt="" />
+                        <span className='block'>Company Profile</span>
+                    </div>
+                </li>
+                <li className='text-center p-2'>
+                    <div className='relative text-center'>
+                        <img className='w-16 mx-auto' src={visionIcon} alt="" />
+                        <span className='block'>Vision and Mission</span>
+                    </div>
+                </li>
+            </ul>
         </li>
         <li className={props.liStyles}>
           <a href="/">Business Divisions</a>
