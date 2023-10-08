@@ -14,37 +14,37 @@ function BusinessDivisSubmenu(props) {
                 onMouseLeave={props.exitFunc}
                 className='absolute top-full bg-white rounded-md border border-green-600 left-auto right-2'>
                 <ul className='flex text-black p-4 space-x-4'>
-                    <li className='text-center p-2'>
+                    <li className='text-center p-2 hover:text-green-600 cursor-pointer'>
                         <div className='relative text-center'>
                             <img className='w-12 mx-auto' src={oilIcon} alt="" />
                             <span className='block'>Oil and Gas Department</span>
                         </div>
                     </li>
-                    <li className='text-center p-2'>
+                    <li className='text-center p-2 hover:text-green-600 cursor-pointer'>
                         <div className='relative text-center'>
                             <img className='w-12 mx-auto' src={chemIcon} alt="" />
                             <span className='block'>Chemical Department</span>
                         </div>
                     </li>
-                    <li className='text-center p-2'>
+                    <li className='text-center p-2 hover:text-green-600 cursor-pointer'>
                         <div className='relative text-center'>
                             <img className='w-12 mx-auto' src={mechIcon} alt="" />
                             <span className='block'>Mechanical Department</span>
                         </div>
                     </li>
-                    <li className='text-center p-2'>
+                    <li className='text-center p-2 hover:text-green-600 cursor-pointer'>
                         <div className='relative text-center'>
                             <img className='w-12 mx-auto' src={construcIcon} alt="" />
                             <span className='block'>Construction Department</span>
                         </div>
                     </li>
-                    <li className='text-center p-2'>
+                    <li className='text-center p-2 hover:text-green-600 cursor-pointer'>
                         <div className='relative text-center'>
                             <img className='w-12 mx-auto' src={gasIcon} alt="" />
                             <span className='block'>Oil & Gas Division</span>
                         </div>
                     </li>
-                    <li className='text-center p-2'>
+                    <li className='text-center p-2 hover:text-green-600 cursor-pointer'>
                         <div className='relative text-center'>
                             <img className='w-12 mx-auto' src={gasIcon} alt="" />
                             <span className='block'>Telecomms & Security</span>

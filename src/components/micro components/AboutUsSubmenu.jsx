@@ -13,13 +13,13 @@ function AboutUsSubmenu(props) {
         return (
             <animated.li style={props.springs} onMouseLeave={props.exitFunc} className='absolute top-full bg-white rounded-md border border-green-600'>
                 <ul className='flex text-black p-4 space-x-8'>
-                    <li className='text-center p-2'>
+                    <li className='text-center p-2 hover:text-green-600 cursor-pointer'>
                         <div className='relative text-center'>
                             <img className='w-12 mx-auto' src={companyIcon} alt="" />
                             <span className='block'>Company Profile</span>
                         </div>
                     </li>
-                    <li className='text-center p-2'>
+                    <li className='text-center p-2 hover:text-green-600 cursor-pointer'>
                         <div className='relative text-center'>
                             <img className='w-12 mx-auto' src={visionIcon} alt="" />
                             <span className='block'>Vision and Mission</span>
