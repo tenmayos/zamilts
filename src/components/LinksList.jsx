@@ -12,7 +12,7 @@ function LinksList(props) {
   const [submenuIsOpen, setSubmenuIsOpen] = useState(false);
   const [getInHovered, setGetInHover] = useState(false);
   const [aboutUsHovered, setAboutUsHovered] = useState(false);
-  const aboutUsTransition = useTransition(aboutUsHovered, {
+  const submenuTransition = useTransition(aboutUsHovered, {
     from: { opacity: 0 },
     enter: { opacity: 1 },
     leave: { opacity: 0 },
@@ -46,7 +46,7 @@ function LinksList(props) {
           <a href="/">About Us</a>
         </li>
         {
-          aboutUsTransition(
+          submenuTransition(
             (style, state) =>
               state
               &&
