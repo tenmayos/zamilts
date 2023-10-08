@@ -1,7 +1,7 @@
 import { animated, useSpring } from '@react-spring/web';
 import { useState } from 'react';
-import visionIcon from '../assets/png/vision.png';
-import companyIcon from '../assets/png/company.png';
+import { useTransition } from '@react-spring/web';
+import AboutUsSubmenu from './micro components/AboutUsSubmenu';
 /**
  * @param {string} mainStyles ul's CSS classes
  * @param {string} liStyles li's CSS Classes
@@ -9,13 +9,24 @@ import companyIcon from '../assets/png/company.png';
  * @description returns an HTML ul filled with the website's pages
  */
 function LinksList(props) {
+  const [submenuIsOpen, setSubmenuIsOpen] = useState(false);
   const [getInHovered, setGetInHover] = useState(false);
+  const [aboutUsHovered, setAboutUsHovered] = useState(false);
+  const aboutUsTransition = useTransition(aboutUsHovered, {
+    from: { opacity: 0 },
+    enter: { opacity: 1 },
+    leave: { opacity: 0 },
+  });
   const [springs, api] = useSpring(() => {
     return {
       // text starts to show from right to left
     }
   })
 
+  function handleAboutUsHover() {
+    setAboutUsHovered(prevState => !prevState);
+    setSubmenuIsOpen(prevState => !prevState);
+  }
   function handleGetIn() {
 
     setGetInHover(() => {
@@ -30,25 +41,19 @@ function LinksList(props) {
         <li className={props.liStyles}>
           <a href="/">Home</a>
         </li>
-        <li className={props.liStyles}>
+        <li className={props.liStyles}
+          onMouseEnter={handleAboutUsHover}>
           <a href="/">About Us</a>
         </li>
-        <li className='absolute top-full bg-white rounded-md'>
-        <ul className='flex text-black p-4 space-x-8'>
-                <li className='text-center p-2'>
-                    <div className='relative text-center'>
-                        <img className='w-16 mx-auto' src={companyIcon} alt="" />
-                        <span className='block'>Company Profile</span>
-                    </div>
-                </li>
-                <li className='text-center p-2'>
-                    <div className='relative text-center'>
-                        <img className='w-16 mx-auto' src={visionIcon} alt="" />
-                        <span className='block'>Vision and Mission</span>
-                    </div>
-                </li>
-            </ul>
-        </li>
+        {
+          aboutUsTransition(
+            (style, state) =>
+              state
+              &&
+              <AboutUsSubmenu
+                springs={style} type='pc'
+                exitFunc={handleAboutUsHover} />
+          )}
         <li className={props.liStyles}>
           <a href="/">Business Divisions</a>
         </li>
