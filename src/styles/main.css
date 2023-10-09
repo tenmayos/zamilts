@@ -56,6 +56,10 @@ body {
     content: '+';
 }
 
+.resized {
+    width: 336px;
+}
+
 @media (min-width: 360px) {
     .long {height: 350px;}
 }
