@@ -16,38 +16,38 @@ function BusinessDivisSubmenu(props) {
                 <ul className='flex text-black p-4 space-x-4'>
                     <li className='transition-colors text-center p-2 hover:text-green-600 cursor-pointer'>
                         <div className='relative text-center'>
-                            <img className='w-12 mx-auto' src={oilIcon} alt="" />
-                            <span className='block'>Oil & Gas Department</span>
+                            <img className='w-10 mx-auto' src={oilIcon} alt="" />
+                            <span className='block text-sm'>Oil & Gas Department</span>
                         </div>
                     </li>
                     <li className='transition-colors text-center p-2 hover:text-green-600 cursor-pointer'>
                         <div className='relative text-center'>
-                            <img className='w-12 mx-auto' src={chemIcon} alt="" />
-                            <span className='block'>Chemical Department</span>
+                            <img className='w-10 mx-auto' src={chemIcon} alt="" />
+                            <span className='block text-sm'>Chemical Department</span>
                         </div>
                     </li>
                     <li className='transition-colors text-center p-2 hover:text-green-600 cursor-pointer'>
                         <div className='relative text-center'>
-                            <img className='w-12 mx-auto' src={mechIcon} alt="" />
-                            <span className='block'>Mechanical Department</span>
+                            <img className='w-10 mx-auto' src={mechIcon} alt="" />
+                            <span className='block text-sm'>Mechanical Department</span>
                         </div>
                     </li>
                     <li className='transition-colors text-center p-2 hover:text-green-600 cursor-pointer'>
                         <div className='relative text-center'>
-                            <img className='w-12 mx-auto' src={construcIcon} alt="" />
-                            <span className='block'>Construction Department</span>
+                            <img className='w-10 mx-auto' src={construcIcon} alt="" />
+                            <span className='block text-sm'>Construction Department</span>
                         </div>
                     </li>
                     <li className='transition-colors text-center p-2 hover:text-green-600 cursor-pointer'>
                         <div className='relative text-center'>
-                            <img className='w-12 mx-auto' src={gasIcon} alt="" />
-                            <span className='block'>Oil & Gas Division</span>
+                            <img className='w-10 mx-auto' src={gasIcon} alt="" />
+                            <span className='block text-sm'>Oil & Gas Division</span>
                         </div>
                     </li>
                     <li className='transition-colors text-center p-2 hover:text-green-600 cursor-pointer'>
                         <div className='relative text-center'>
-                            <img className='w-12 mx-auto' src={gasIcon} alt="" />
-                            <span className='block'>Telecomms & Security</span>
+                            <img className='w-10 mx-auto' src={gasIcon} alt="" />
+                            <span className='block text-sm'>Telecomms & Security</span>
                         </div>
                     </li>
                 </ul>
