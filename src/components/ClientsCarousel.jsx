@@ -26,16 +26,6 @@ function ClientsCarousel({ children: slides, autoSlideInterval = 3000 }) {
                 style={{ transform: `translateX(-${currentIndex * 335}px)` }}>
                 {slides}
             </div>
-            <div className="absolute inset-0 flex items-center justify-between">
-                <button onClick={prev}>
-                    <i className="fa-solid fa-chevron-left"></i>
-                </button>
-                <button onClick={next}>
-                    <i className="fa-solid fa-chevron-right"></i>
-                </button>
-            </div>
-            <div className="absolute bottom-4 right-0 left-0">
-            </div>
         </div>
     )
 }
