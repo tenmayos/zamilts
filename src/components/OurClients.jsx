@@ -4,7 +4,7 @@ import fullClientsData from "../data/clientsData";
 function OurClients() {
 
     return (
-        <section className="grid grid-rows-2 content-center m-4">
+        <section className="grid grid-rows-2 content-center m-4 pb-6">
             <div className="row-start-1 text-center m-auto">
                 <h1 className="text-3xl">
                     <strong>
