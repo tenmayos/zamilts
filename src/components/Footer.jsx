@@ -6,6 +6,7 @@ function Footer() {
     const anchorClasses = 'transition-colors hover:text-green-600';
     return (
         <>
+            <hr className='border border-gray-200 my-4 w-2/3 lg:w-10/12 m-auto' />
             <footer
                 className="grid grid-rows-[max-content_1fr] md:grid-rows-[max-content_1fr] lg:grid-cols-4 lg:grid-rows-none
              px-4 text-left md:grid-cols-3 md:px-12 lg:w-10/12 lg:mx-auto">
@@ -17,7 +18,7 @@ function Footer() {
                         Their symmetry and
                         bright colors
                         boost the aesthetics of places you occupy...
-                        </p>
+                    </p>
                     <div className='pl-2 pt-2'>
                         <div>
                             <ul className='text-xl flex space-x-7 text-gray-600'>
@@ -118,6 +119,7 @@ function Footer() {
                     </ul>
                 </div>
             </footer>
+            <hr className='border border-gray-200 my-4 w-2/3 lg:w-10/12 m-auto' />
             <MicroFooter />
         </>
     )
