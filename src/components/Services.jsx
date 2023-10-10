@@ -1,10 +1,6 @@
 import { useState, useEffect } from 'react';
 import logo from '../assets/png/logo.png';
-import pic1 from '../assets/jpg/home_ser_1.jpg';
-import pic2 from '../assets/jpg/home_ser_2.jpg';
-import pic3 from '../assets/jpg/home_ser_3.jpg';
-import pic4 from '../assets/jpg/home_ser_4.jpg';
-import pic5 from '../assets/jpg/home_ser_5.jpg';
+import servicesImages from '../data/servicesData';
 
 function Services() {
     const [currentIndex, setCurrentIndex] = useState(0);
@@ -13,40 +9,6 @@ function Services() {
     // 2- work on the carousel change animation.
     // 3- see how u can zoom into the picture as the window shrinks.
 
-
-    const imagesUsed = [
-        {
-            image: pic1,
-            alt: 'image of employees focused on working',
-            title: 'Around 250 employees serving 3000 customers',
-            desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna...'
-        },
-        {
-            image: pic2,
-            alt: 'image of 2 people shaking hands',
-            title: 'Professional business approach',
-            desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna...',
-        },
-        {
-            image: pic3,
-            alt: 'image of a truck and a plane and a car with a ship carrying large containers. i know, dont ask...',
-            title: 'Professional logistical support & services',
-            desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna...',
-        },
-        {
-            image: pic4,
-            alt: 'image of a person pressing a single key on a laptop.',
-            title: 'Prompt coordination & easier communication',
-            desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna...',
-        },
-        {
-            image: pic5,
-            alt: 'image of 2 guys wearing suits and shaking hands while the third person touches a shut down tablet',
-            title: 'Strategic partnership approach with clients & suppliers',
-            desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna...',
-        }
-    ]
-
     /*useEffect(() => {
         const carouselChanger = setInterval(goToNext, 5000)
         return () => clearInterval(carouselChanger)
@@ -54,14 +16,14 @@ function Services() {
 
     function goToPrev() {
         if (currentIndex === 0) {
-            setCurrentIndex(imagesUsed.length - 1);
+            setCurrentIndex(servicesImages.length - 1);
         } else {
             setCurrentIndex(currentIndex - 1);
         }
 
     }
     function goToNext() {
-        if (currentIndex === imagesUsed.length - 1) {
+        if (currentIndex === servicesImages.length - 1) {
             setCurrentIndex(0);
         } else {
             setCurrentIndex(currentIndex + 1);
@@ -98,18 +60,18 @@ function Services() {
                         <div className='pl-5'>
                             <h4 className='inline-flex text-2xl text-white mb-4'>
                                 <strong>{
-                                    imagesUsed[currentIndex].title}
+                                    servicesImages[currentIndex].language.en.title}
                                 </strong>
                             </h4>
                             <p className='text-white text-base lg:text-lg'>
-                                {imagesUsed[currentIndex].desc}
+                                {servicesImages[currentIndex].language.en.desc}
                             </p>
                         </div>
                     </div>
                     <div className='overflow-hidden'>
                         {/* changed width to full */}
-                        <img className='long zoomed lg:w-full object-none' src={imagesUsed[currentIndex].image}
-                            alt={imagesUsed[currentIndex].alt} />
+                        <img className='long zoomed lg:w-full object-none' src={servicesImages[currentIndex].image}
+                            alt={servicesImages[currentIndex].language.en.alt} />
                     </div>
                 </div>
             </div>
