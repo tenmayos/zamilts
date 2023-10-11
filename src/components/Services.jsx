@@ -1,8 +1,12 @@
 import { useState, useEffect } from 'react';
 import logo from '../assets/png/logo.png';
 import servicesImages from '../data/servicesData';
+import { servicesLanguage } from '../pages/Home/PageData/homeData';
+import { useLocation } from 'react-router-dom';
 
 function Services() {
+    const isArabic = useLocation().pathname.includes('/ar');
+    const languagePack = isArabic ? servicesLanguage.ar : servicesLanguage.en;
     const [currentIndex, setCurrentIndex] = useState(0);
     // TODO:
     // 1- make it change automatically every set amount of time.
@@ -34,7 +38,7 @@ function Services() {
         <section className='pb-4'>
             <h1 className='text-left text-2xl mb-6 ml-4'>
                 <strong>
-                    Value Added Services
+                    {languagePack[0]}
                 </strong>
             </h1>
             <div className='relative'>
@@ -59,19 +63,21 @@ function Services() {
                         </div>
                         <div className='pl-5'>
                             <h4 className='inline-flex text-2xl text-white mb-4'>
-                                <strong>{
-                                    servicesImages[currentIndex].language.en.title}
+                                <strong>
+                                    {
+                                        isArabic ? servicesImages[currentIndex].language.ar.title : servicesImages[currentIndex].language.en.title
+                                    }
                                 </strong>
                             </h4>
                             <p className='text-white text-base lg:text-lg'>
-                                {servicesImages[currentIndex].language.en.desc}
+                                {isArabic ? servicesImages[currentIndex].language.ar.desc : servicesImages[currentIndex].language.en.desc}
                             </p>
                         </div>
                     </div>
                     <div className='overflow-hidden'>
                         {/* changed width to full */}
                         <img className='long zoomed lg:w-full object-none' src={servicesImages[currentIndex].image}
-                            alt={servicesImages[currentIndex].language.en.alt} />
+                            alt={isArabic ? servicesImages[currentIndex].language.ar.alt : servicesImages[currentIndex].language.en.alt} />
                     </div>
                 </div>
             </div>
