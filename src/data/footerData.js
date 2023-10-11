@@ -50,3 +50,10 @@ const footerLanguages = {
 }
 
 export { footerLanguages };
+
+const microfooterLanguages = {
+    en: ['Zamil Trade & Services All rights reserved'],
+    ar: ['الزامل للتجارة والخدمات جميع الحقوق محفوظة']
+}
+
+export { microfooterLanguages };
