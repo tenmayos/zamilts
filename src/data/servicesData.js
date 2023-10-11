@@ -10,8 +10,8 @@ const servicesImages = [
         language: {
             ar: {
                 alt: '',
-                title: '',
-                desc: '',
+                title: 'حوالي 250 موظف يخدمون 3000 عميل',
+                desc: 'نحن نعمل كشركاء للمصنعين في الخارج ونفخر بتمثيل العديد من الشركات العالمية والمؤسسات التجارية والخدمات والشركات...',
             },
             en: {
                 alt: 'image of employees focused on working',
@@ -26,8 +26,8 @@ const servicesImages = [
         language: {
             ar: {
                 alt: '',
-                title: '',
-                desc: '',
+                title: 'نهج الأعمال المهنية',
+                desc: 'نحن نعمل كشركاء للمصنعين في الخارج ونفخر بتمثيل العديد من الشركات العالمية والمؤسسات التجارية والخدمات والشركات...',
             },
             en: {
                 alt: 'image of 2 people shaking hands',
@@ -42,8 +42,8 @@ const servicesImages = [
         language: {
             ar: {
                 alt: '',
-                title: '',
-                desc: '',
+                title: 'دعم وخدمات لوجستية احترافية',
+                desc: 'نحن نعمل كشركاء للمصنعين في الخارج ونفخر بتمثيل العديد من الشركات العالمية والمؤسسات التجارية والخدمات والشركات...',
             },
             en: {
                 alt: 'image of a truck and a plane and a car with a ship carrying large containers. i know, dont ask...',
@@ -58,8 +58,8 @@ const servicesImages = [
         language: {
             ar: {
                 alt: '',
-                title: '',
-                desc: '',
+                title: 'التنسيق السريع والتواصل الأسهل',
+                desc: 'نحن نعمل كشركاء للمصنعين في الخارج ونفخر بتمثيل العديد من الشركات العالمية والمؤسسات التجارية والخدمات والشركات...',
             },
             en: {
                 alt: 'image of a person pressing a single key on a laptop.',
@@ -74,15 +74,14 @@ const servicesImages = [
         language: {
             ar: {
                 alt: '',
-                title: '',
-                desc: '',
+                title: 'نهج الشراكة الإستراتيجية مع العملاء والموردين',
+                desc: 'نحن نعمل كشركاء للمصنعين في الخارج ونفخر بتمثيل العديد من الشركات العالمية والمؤسسات التجارية والخدمات والشركات...',
             },
             en: {
                 alt: 'image of 2 guys wearing suits and shaking hands while the third person touches a shut down tablet',
                 title: 'Strategic partnership approach with clients & suppliers',
                 desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna...',
             }
-
         }
     }
 ]
