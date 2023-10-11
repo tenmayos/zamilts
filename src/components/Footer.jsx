@@ -1,9 +1,15 @@
 import subLogo from '../assets/png/logo-dr.png'
 import MicroFooter from './MicroFooter';
+import { useLocation } from 'react-router-dom';
+import { footerLanguages } from '../data/footerData';
 
 function Footer() {
     // will will implement hovering with CSS instead of JS.
     const anchorClasses = 'transition-colors hover:text-green-600';
+
+    const isArabic = useLocation().pathname.includes('/ar');
+    const languagePack = isArabic ? footerLanguages.ar : footerLanguages.en;
+
     return (
         <>
             <hr className='border border-gray-200 my-4 w-2/3 lg:w-10/12 m-auto' />
@@ -15,9 +21,7 @@ function Footer() {
                         <img className='ml-2 mb-2 w-44 md:w-52 lg:w-60' src={subLogo} alt="Darker Zamil Trade & Services Logo" />
                     </a>
                     <p className='pt-4 pl-2 pr-16 lg:px-2'>
-                        Their symmetry and
-                        bright colors
-                        boost the aesthetics of places you occupy...
+                        {languagePack[0]}
                     </p>
                     <div className='pl-2 pt-2'>
                         <div>
@@ -50,26 +54,26 @@ function Footer() {
                     <ul className='space-y-3'>
                         <h1 className='text-green-600 mb-2'>
                             <strong>
-                                Zamil Trade & Services
+                                {languagePack[1]}
                             </strong>
                         </h1>
                         <li>
-                            <a className={anchorClasses} href="/">About us</a>
+                            <a className={anchorClasses} href="/">{languagePack[2]}</a>
                         </li>
                         <li>
-                            <a className={anchorClasses} href="/">Our Clients</a>
+                            <a className={anchorClasses} href="/">{languagePack[3]}</a>
                         </li>
                         <li>
-                            <a className={anchorClasses} href="/">Business Units</a>
+                            <a className={anchorClasses} href="/">{languagePack[4]}</a>
                         </li>
                         <li>
-                            <a className={anchorClasses} href="/">Careers</a>
+                            <a className={anchorClasses} href="/">{languagePack[5]}</a>
                         </li>
                         <li>
-                            <a className={anchorClasses} href="/">Certifications</a>
+                            <a className={anchorClasses} href="/">{languagePack[6]}</a>
                         </li>
                         <li>
-                            <a className={anchorClasses} href="/">Contact Us</a>
+                            <a className={anchorClasses} href="/">{languagePack[7]}</a>
                         </li>
                     </ul>
                 </div>
@@ -77,26 +81,26 @@ function Footer() {
                     <ul className='space-y-3'>
                         <h1 className='text-green-600 mb-2'>
                             <strong>
-                                Our Regions
+                                {languagePack[8]}
                             </strong>
                         </h1>
                         <li>
-                            <a className={anchorClasses} href="/">Dammam</a>
+                            <a className={anchorClasses} href="/">{languagePack[9]}</a>
                         </li>
                         <li>
-                            <a className={anchorClasses} href="/">Riyadh</a>
+                            <a className={anchorClasses} href="/">{languagePack[10]}</a>
                         </li>
                         <li>
-                            <a className={anchorClasses} href="/">Jeddah</a>
+                            <a className={anchorClasses} href="/">{languagePack[11]}</a>
                         </li>
                         <li>
-                            <a className={anchorClasses} href="/">Bahrain</a>
+                            <a className={anchorClasses} href="/">{languagePack[12]}</a>
                         </li>
                         <li>
-                            <a className={anchorClasses} href="/">UAE</a>
+                            <a className={anchorClasses} href="/">{languagePack[13]}</a>
                         </li>
                         <li>
-                            <a className={anchorClasses} href="/">Turkey</a>
+                            <a className={anchorClasses} href="/">{languagePack[14]}</a>
                         </li>
                     </ul>
                 </div>
@@ -104,17 +108,17 @@ function Footer() {
                     <ul className='space-y-3'>
                         <h1 className='text-green-600 mb-2'>
                             <strong>
-                                Offerings
+                                {languagePack[15]}
                             </strong>
                         </h1>
                         <li>
-                            <a className={anchorClasses} href="/">Residential</a>
+                            <a className={anchorClasses} href="/">{languagePack[16]}</a>
                         </li>
                         <li>
-                            <a className={anchorClasses} href="/">Commercial</a>
+                            <a className={anchorClasses} href="/">{languagePack[17]}</a>
                         </li>
                         <li>
-                            <a className={anchorClasses} href="/">Investments</a>
+                            <a className={anchorClasses} href="/">{languagePack[18]}</a>
                         </li>
                     </ul>
                 </div>
