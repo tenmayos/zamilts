@@ -1,18 +1,23 @@
 import ClientsCarousel from "./ClientsCarousel";
 import fullClientsData from "../data/clientsData";
+import { useLocation } from "react-router-dom";
+import { clientsLanguage } from "../pages/Home/PageData/homeData";
 
 function OurClients() {
+
+    const isArabic = useLocation().pathname.includes('/ar');
+    const languagePack = isArabic ? clientsLanguage.ar : clientsLanguage.en;
 
     return (
         <section className="grid grid-rows-2 content-center m-4 pb-6">
             <div className="row-start-1 text-center m-auto">
                 <h1 className="text-3xl">
                     <strong>
-                        Our Clients
+                        {languagePack[0]}
                     </strong>
                 </h1>
                 <p className="p-4">
-                    We are considered as one of the most reputed trading organizations of Saudi Arabia and is the best when it comes to total reliability
+                    {languagePack[1]}
                 </p>
             </div>
             <div className="row-start-2 flex justify-center">
