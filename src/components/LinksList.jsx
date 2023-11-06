@@ -51,6 +51,7 @@ function LinksList(props) {
         </li>
         <li className={props.liStyles}
           onMouseEnter={() => {
+            setBdivisHovered(false);
             setAboutUsHovered(true);
           }}>
           <a href="/">{languagePack[1]}</a>
@@ -68,6 +69,7 @@ function LinksList(props) {
           )}
         <li className={props.liStyles}
           onMouseEnter={() => {
+            setAboutUsHovered(false);
             setBdivisHovered(true);
           }}>
           <a href="/">{languagePack[2]}</a>
