@@ -1,4 +1,4 @@
-import NavBar from "../../components/Navbar"
+import Navbar from "../../components/Navbar"
 import Hero from '../../components/Hero'
 import Intro from "../../components/Intro"
 import Services from "../../components/Services"
@@ -10,7 +10,7 @@ function Home() {
 
     return (
         <>
-            <NavBar />
+            <Navbar />
             <Hero />
             <Intro />
             <Services />
