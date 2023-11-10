@@ -1,32 +1,46 @@
-import Hamburger from "./Hamburger.jsx";
-import LinksList from './LinksList.jsx';
+import { useState } from "react";
 import logo from "../assets/png/logo.png";
+import { Link, useLocation } from "react-router-dom";
 
+function Navbar() {
 
-function NavBar() {
-  const ulStyles = 'flex space-x-4 text-center navbarAllignment text-white';
-  const liStyles = "transition-all hover:text-green-400 p-1";
+    const [menuOpen, setMenuOpen] = useState(false);
 
-  // will need a state to know when the hamburger has been clicked
-  return (
-    <header className="flex border-black bg-gradient-to-b from-green-700 transition-all overflow-hidden">
-      <div
-        id="logo"
-        className="w-44 p-4 ml-4 shrink-0 md:w-56 lg:w-64 lg:ml-2"
-      >
-        <a href="/">
-          <img src={logo} alt="zamil logo" />
-        </a>
-      </div>
-      <div className="ml-auto inline-block content-center">
-        <Hamburger className="mr-6 mt-3 text-3xl lg:hidden md:text-5xl p-1 focus:ring text-white" />
-      </div>
-      <nav
-        className="m-auto mr-8 text-white text-xl space-x-7 hidden lg:flex bg-black p-4 rounded-md border border-green-400">
-        <LinksList mainStyles={ulStyles} liStyles={liStyles} />
-      </nav>
-    </header>
-  );
+    function HandleMenuClick() {
+
+        const menuClasses = document.getElementById('menu-button').classList;
+        const cssOpacityClass = 'opacity-50';
+
+        if (menuOpen) {
+            menuClasses.remove(cssOpacityClass);
+            setMenuOpen(false);
+            return;
+        }
+
+        setMenuOpen(true);
+        menuClasses.add(cssOpacityClass);
+    }
+
+    return (
+        <div className="fixed top-0 left-0 w-full z-20 bg-gradient-to-b from-green-700">
+
+            <div className="flex justify-between">
+
+                <Link className="ml-6 mt-6" to={useLocation().pathname.includes('ar') ? '/ar' : '/'} >
+                    <img className="w-44" src={logo} alt="Zamil Trade & Services Logo" />
+                </Link>
+                <div>
+                    <button id='menu-button' className="inline-block h-fit text-white text-4xl mr-6 mt-6 transition-opacity lg:hidden" onClick={HandleMenuClick}>
+                        <i className="fa-solid fa-bars" />
+                    </button>
+
+                    <div id='large-menu'>
+                        {/* add large screen menu here*/}
+                    </div>
+                </div>
+            </div>
+        </div>
+    )
 }
 
-export default NavBar;
+export default Navbar;

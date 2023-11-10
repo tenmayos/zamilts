@@ -5,9 +5,74 @@
 /* Write custom CSS here if needed */
 
 body {
-    background-color: gray;
+    background-color: white;
 }
 
-.navbarAllignment {
+.ul-allignment {
     align-items: flex-start;
+}
+
+.shadowed:hover {
+    box-shadow: 0px 0px 10px 0px green;
+}
+
+.transform-center {
+    transform: translate(-50%, -50%);
+}
+
+/* Look into this again later */
+.zoomed {
+    /*transform: scale(1.1);*/
+    /*transform-origin: 50% 50%;*/
+    /* sm: base */
+    /* translate: 0% 0%; */
+    max-width: 1920px;
+    /* lg: scale(1.0)*/
+    
+}
+
+.carousel-container {
+    display: inline-block;
+    margin: 20px;
+    border: 1px solid black;
+    overflow: hidden;
+    /* clip the excess when child gets bigger than parent */
+}
+
+.long {
+    /* LG: 750px */
+    /*height: 750px;*/
+    /* SM: 500px */
+    /* md: 900px */
+    /* SM => BASE */
+    /* cant figure out xl height as i dont have a 1440p screen */
+    height: 400px;
+}
+
+.has-sub::after {
+    content: '+';
+}
+.has-sub::before {
+    content: '+';
+}
+
+.resized {
+    width: 336px;
+}
+
+@media (min-width: 360px) {
+    .long {height: 350px;}
+}
+@media (min-width: 640px) {
+    .long {height: 500px;}
+}
+@media (min-width: 768px) {
+    .long {height: 600px;}
+    
+}
+@media (min-width: 1024px) {
+    .long {height: 750px;}
+}
+@media (min-width: 1280px) {
+    .long {height: 750px;}
 }
